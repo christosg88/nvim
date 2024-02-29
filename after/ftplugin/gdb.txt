@@ -1,0 +1,12 @@
+startupdone
+New UI allocated
+quit
+startupdone
+New UI allocated
+Starting program:  
+No executable file specified.
+Use the "file" or "exec-file" command.
+Starting program:  ls
+No executable file specified.
+Use the "file" or "exec-file" command.
+quit
