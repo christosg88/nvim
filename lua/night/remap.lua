@@ -25,8 +25,6 @@ vim.keymap.set("n", "<leader>n", vim.cmd.bp)
 vim.keymap.set("n", "<leader>m", vim.cmd.bn)
 
 -- Location/Quickfix list
-vim.keymap.set("n", "<c-k>", vim.cmd.lprev)
-vim.keymap.set("n", "<c-j>", vim.cmd.lnext)
 vim.keymap.set("n", "<leader>k", vim.cmd.cprev)
 vim.keymap.set("n", "<leader>j", vim.cmd.cnext)
 
