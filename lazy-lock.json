@@ -3,7 +3,7 @@
   "auto-pairs": { "branch": "master", "commit": "39f06b873a8449af8ff6a3eee716d3da14d63a76" },
   "base16-nvim": { "branch": "master", "commit": "b3e9ec6a82c05b562cd71f40fe8964438a9ba64a" },
   "cmp-nvim-lsp": { "branch": "main", "commit": "5af77f54de1b16c34b23cba810150689a3a90312" },
-  "lazy.nvim": { "branch": "main", "commit": "aedcd79811d491b60d0a6577a9c1701063c2a609" },
+  "lazy.nvim": { "branch": "main", "commit": "28126922c9b54e35a192ac415788f202c3944c9f" },
   "lsp-zero.nvim": { "branch": "v3.x", "commit": "009ace7a0ca360d9299ff7eb33364b5c16556561" },
   "nvim-cmp": { "branch": "main", "commit": "04e0ca376d6abdbfc8b52180f8ea236cbfddf782" },
   "nvim-lspconfig": { "branch": "master", "commit": "9553725789be682ecd945a527ec552e489ea8534" },
@@ -21,7 +21,6 @@
   "vim-highlightedyank": { "branch": "master", "commit": "afb0f262b490706c23e94012c2ab9fa67c0481ce" },
   "vim-markdown": { "branch": "master", "commit": "a657e697376909c41475a686eeef7fc7a4972d94" },
   "vim-night": { "branch": "main", "commit": "159ee9648df0c08fd10d44eacdf87825607b7889" },
-  "vim-perforce": { "branch": "master", "commit": "a7293e3952d26b227b5835e0cca95369fb2d455f" },
   "vim-surround": { "branch": "master", "commit": "3d188ed2113431cf8dac77be61b842acb64433d9" },
   "vim-symlink": { "branch": "master", "commit": "fec2d1a72c6875557109ce6113f26d3140b64374" }
 }
