@@ -1,3 +1,6 @@
+-- set the leader before loading any plugins
+vim.g.mapleader = " "
+
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
@@ -21,8 +24,7 @@ require("lazy").setup({
   "vim-airline/vim-airline",
   "vim-airline/vim-airline-themes",
   "machakann/vim-highlightedyank",
-  "godlygeek/tabular",
-  "preservim/vim-markdown",
+  { "preservim/vim-markdown",          dependencies = "godlygeek/tabular" },
   "christosg88/vim-night",
   "RRethy/base16-nvim",
   { "aymericbeaumet/vim-symlink",      dependencies = "moll/vim-bbye" },

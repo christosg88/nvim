@@ -3,18 +3,25 @@ require('lsp-zero')
 local cmp = require('cmp')
 cmp.setup({
   sources = {
-    {name = 'nvim_lsp'},
+    { name = 'nvim_lsp' },
   },
   mapping = {
-    ['<Up>'] = cmp.mapping.select_prev_item({behavior = 'insert'}),
-    ['<Down>'] = cmp.mapping.select_next_item({behavior = 'insert'}),
-    ['<tab>'] = cmp.mapping(function(fallback)
+    ['<Up>'] = cmp.mapping.select_prev_item({ behavior = 'insert' }),
+    ['<Down>'] = cmp.mapping.select_next_item({ behavior = 'insert' }),
+    ["<Tab>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_next_item({behavior = 'insert'})
       else
         fallback()
       end
-    end),
+    end, { "i", "s" }),
+    ["<S-Tab>"] = cmp.mapping(function(fallback)
+      if cmp.visible() then
+        cmp.select_prev_item({ behavior = 'insert' })
+      else
+        fallback()
+      end
+    end, { "i", "s" }),
   },
   snippet = {
     expand = function(args)
@@ -51,14 +58,12 @@ lspconfig.pylsp.setup({
     pylsp = {
       plugins = {
         pycodestyle = {
-          ignore = {'W391'},
           maxLineLength = 120
         }
       }
     }
   }
 })
-
 lspconfig.lua_ls.setup {
   on_init = function(client)
     local path = client.workspace_folders[1].name

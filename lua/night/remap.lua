@@ -5,9 +5,10 @@ vim.keymap.set("n", "N", "Nzz")
 vim.keymap.set("n", "n", "nzz")
 vim.keymap.set("n", "<c-u>", "<c-u>zz")
 vim.keymap.set("n", "<c-d>", "<c-d>zz")
+vim.keymap.set({"n", "v"}, "J", "J0")
 
-vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
-vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+vim.keymap.set("v", "<c-J>", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v", "<c-K>", ":m '<-2<CR>gv=gv")
 vim.keymap.set("n", "<leader>h", vim.cmd.noh)
 vim.keymap.set("n", "<leader>d", ":put =strftime('  %b %d %Y - Christos Gkantidis : ')<CR>")
 
@@ -19,7 +20,6 @@ vim.keymap.set({"n", "v"}, "<leader>P", '"+P')
 vim.keymap.set({"n", "v"}, "<leader>y", '"+y')
 
 -- Buffers
-vim.keymap.set("n", "<leader>b", vim.cmd(":buffers<cr>:buffer<space>"))
 vim.keymap.set("n", "<leader><space>", "<c-6>")
 vim.keymap.set("n", "<leader>n", vim.cmd.bp)
 vim.keymap.set("n", "<leader>m", vim.cmd.bn)

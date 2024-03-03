@@ -1,4 +1,3 @@
-vim.g.mapleader        = " "
 vim.opt.list           = true -- make tabs visible
 vim.opt.listchars      = "tab:▸·,trail:×" -- visualize tabs and trailing whitespace
 vim.opt.cursorline     = true -- highlight the cursor's line
