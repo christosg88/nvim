@@ -52,5 +52,11 @@ vim.api.nvim_create_user_command("Tpt", function()
   end,
   {}
 )
+vim.api.nvim_create_user_command("Dbg", function(args)
+    vim.cmd.packadd("termdebug")
+    vim.cmd.TermdebugCommand(args.args)
+  end,
+  { nargs = 1 }
+)
 
 require("night")
