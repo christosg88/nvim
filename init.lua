@@ -14,7 +14,8 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup({
+local lazy = require("lazy")
+lazy.setup({
   "wbthomason/packer.nvim",
   "jiangmiao/auto-pairs",
   "mbbill/undotree",
@@ -37,13 +38,11 @@ require("lazy").setup({
   "hrsh7th/cmp-nvim-lsp",
   "hrsh7th/nvim-cmp",
   "L3MON4D3/LuaSnip",
-})
 
-if os.getenv("USER") == "gkan" then
-  require("lazy").setup({
-    "https://snpsgit.internal.synopsys.com/rihani/vim-perforce.git",
-  })
-end
+  -- Perforce
+  { "git@snpsgit.internal.synopsys.com:rihani/vim-perforce.git", enabled = function() return os.getenv("USER") == "gkan" end }
+
+})
 
 vim.g.termdebug_wide = true
 vim.api.nvim_create_user_command("Tpt", function()

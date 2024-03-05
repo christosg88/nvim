@@ -4,13 +4,15 @@ local cmp = require('cmp')
 cmp.setup({
   sources = {
     { name = 'nvim_lsp' },
+    { name = 'luasnip' },
+    { name = 'path' },
   },
   mapping = {
     ['<Up>'] = cmp.mapping.select_prev_item({ behavior = 'insert' }),
     ['<Down>'] = cmp.mapping.select_next_item({ behavior = 'insert' }),
     ["<Tab>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
-        cmp.select_next_item({behavior = 'insert'})
+        cmp.select_next_item({ behavior = 'insert' })
       else
         fallback()
       end
