@@ -123,10 +123,19 @@ vim.api.nvim_create_autocmd("LspAttach", {
     vim.keymap.set("n", "<f3>", vim.lsp.buf.declaration, opts)
     vim.keymap.set("n", "<f4>", vim.lsp.buf.definition, opts)
     vim.keymap.set("n", "<f5>", vim.lsp.buf.code_action, opts)
-    vim.keymap.set("n", "<f6>", vim.cmd.lopen, opts)
-    vim.keymap.set("n", "<f7>", vim.lsp.buf.references, opts)
+    vim.keymap.set("n", "<f6>", vim.diagnostic.setloclist, opts)
+    vim.keymap.set("n", "<f7>", vim.diagnostic.open_float, opts)
+    vim.keymap.set("n", "<f8>", vim.lsp.buf.references, opts)
+    vim.keymap.set("n", "<f9>",
+      function()
+        if vim.diagnostic.is_disabled() then
+          vim.diagnostic.enable()
+        else
+          vim.diagnostic.disable()
+        end
+      end, opts)
     vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, opts)
-    vim.keymap.set("n", "<leader>f", vim.lsp.buf.format, opts)
+    vim.keymap.set({ "n", "v" }, "<leader>f", function() vim.lsp.buf.format({ async = true }) end, opts)
     vim.keymap.set("n", "<leader>s", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", opts)
     vim.keymap.set("n", "<leader>t", "<cmd>Telescope tags<cr>", opts)
     vim.keymap.set("n", "<c-k>", vim.diagnostic.goto_prev)
