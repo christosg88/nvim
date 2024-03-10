@@ -33,11 +33,17 @@ lazy.setup({
   { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
 
   -- LSP
-  { "VonHeikemen/lsp-zero.nvim",       branch = "v3.x" },
-  "neovim/nvim-lspconfig",
-  "hrsh7th/cmp-nvim-lsp",
-  "hrsh7th/nvim-cmp",
-  "L3MON4D3/LuaSnip",
+  "neovim/nvim-lspconfig",                -- collection of configurations for built-in LSP client
+  "hrsh7th/nvim-cmp",                     -- autocompletion plugin
+  "hrsh7th/cmp-nvim-lsp",                 -- LSP source for nvim-cmp
+  "hrsh7th/cmp-nvim-lsp-signature-help",  -- nvim-cmp source for displaying function signatures
+  "hrsh7th/cmp-path",                     -- filesystem paths source for nvim-cmp
+  "hrsh7th/cmp-buffer",                   -- buffer source for nvim-cmp
+  "hrsh7th/cmp-cmdline",                  -- buffer source for nvim-cmp
+  "hrsh7th/cmp-nvim-lua",                 -- nvim-cmp source for neovim Lua API
+  "hrsh7th/cmp-nvim-lsp-document-symbol", -- nvim-cmp source for textDocument/documentSymbol via nvim-lsp
+  "saadparwaiz1/cmp_luasnip",             -- snippets source for nvim-cmp
+  "L3MON4D3/LuaSnip",                     -- snippets plugin
 
   -- Perforce
   { "git@snpsgit.internal.synopsys.com:rihani/vim-perforce.git", enabled = function() return os.getenv("USER") == "gkan" end }

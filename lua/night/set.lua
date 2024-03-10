@@ -28,3 +28,4 @@ vim.opt.backup         = false
 vim.opt.undodir        = os.getenv("RHOME") .. "/.nvim/undodir"
 vim.opt.undofile       = true
 vim.opt.signcolumn     = "yes"
+vim.opt.completeopt    = { "menu" }
