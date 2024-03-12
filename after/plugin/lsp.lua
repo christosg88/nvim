@@ -1,3 +1,6 @@
+-- disable LSP log file
+vim.lsp.set_log_level("off")
+
 -- add additional capabilities supported by nvim-cmp
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 

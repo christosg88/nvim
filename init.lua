@@ -19,6 +19,7 @@ lazy.setup({
   "wbthomason/packer.nvim",
   "jiangmiao/auto-pairs",
   "mbbill/undotree",
+  "moll/vim-bbye",
   "tpope/vim-fugitive",
   "tpope/vim-surround",
   "mechatroner/rainbow_csv",
@@ -59,7 +60,7 @@ vim.api.nvim_create_user_command("Tpt", function()
     vim.keymap.set("n", "<c-b>", vim.cmd.Break)
     vim.keymap.set("n", "<c-r>", vim.cmd.Run)
     vim.keymap.set("n", "<c-u>", vim.cmd.Until)
-    vim.keymap.set({"n", "v", "i", "t"}, "<c-w>", "<C-\\><C-N><C-w>")
+    vim.keymap.set({ "n", "v", "i", "t" }, "<c-w>", "<C-\\><C-N><C-w>")
     vim.api.nvim_create_autocmd({ "TermOpen", "WinEnter" }, { pattern = "term://*", command = "startinsert" })
     print("Termdebug " .. os.getenv("P4_ROOT") .. "/clt/bin-linux64/pt_shell_exec" .. os.getenv("EXEC_MODE") .. "...")
     vim.cmd("Termdebug " .. os.getenv("P4_ROOT") .. "/clt/bin-linux64/pt_shell_exec" .. os.getenv("EXEC_MODE"))
@@ -75,7 +76,7 @@ vim.api.nvim_create_user_command("Dbg", function(args)
     vim.keymap.set("n", "<c-b>", vim.cmd.Break)
     vim.keymap.set("n", "<c-r>", vim.cmd.Run)
     vim.keymap.set("n", "<c-u>", vim.cmd.Until)
-    vim.keymap.set({"n", "v", "i"}, "<c-w>", "<C-\\><C-N><C-w>")
+    vim.keymap.set({ "n", "v", "i" }, "<c-w>", "<C-\\><C-N><C-w>")
     vim.api.nvim_create_autocmd({ "TermOpen", "WinEnter" }, { pattern = "term://*", command = "startinsert" })
     vim.cmd.TermdebugCommand(args.args)
   end,
