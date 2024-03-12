@@ -119,6 +119,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
   callback = function(event)
     -- enable completion triggered by <c-x><c-o>
     vim.bo[event.buf].omnifunc = "v:lua.vim.lsp.omnifunc"
+    vim.bo[event.buf].formatexpr = nil
 
     -- buffer local mappings
     local opts = { buffer = event.buf }
