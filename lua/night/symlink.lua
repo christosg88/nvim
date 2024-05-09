@@ -1,17 +1,11 @@
 -- open the target of the symlink
-vim.api.nvim_create_autocmd("BufRead", {
-  desc = "Open symlink target",
-  callback = function(event)
-    if vim.api.nvim_win_get_option(0, "diff") then
-      return
-    end
-
-    local resolved = vim.fn.resolve(event.file)
-    if resolved == event.file then
-      return
-    end
-    vim.cmd.Bwipeout()
-    vim.cmd.edit(resolved)
-  end,
-  nested = true
-})
+vim.keymap.set("n", "<leader>l", function()
+  local current_name = vim.api.nvim_buf_get_name(0)
+  local resolved = vim.fn.resolve(current_name)
+  if resolved == current_name then
+    return
+  end
+  vim.cmd.Bwipeout()
+  vim.cmd.edit(resolved)
+end
+)

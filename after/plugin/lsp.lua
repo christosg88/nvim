@@ -81,7 +81,6 @@ cmp.setup {
   sources = {
     { name = "nvim_lsp" },
     { name = "nvim_lsp_signature_help" },
-    { name = "path" },
     { name = "buffer" },
     { name = "nvim_lua" },
     { name = "luasnip" },
@@ -142,7 +141,10 @@ vim.api.nvim_create_autocmd("LspAttach", {
     vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, opts)
     vim.keymap.set({ "n", "v" }, "<leader>f", function() vim.lsp.buf.format({ async = true }) end, opts)
     vim.keymap.set("n", "<leader>s", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", opts)
-    vim.keymap.set("n", "<leader>t", "<cmd>Telescope tags<cr>", opts)
+    vim.keymap.set("n", "<leader>t", function()
+      local p4_root = os.getenv("P4_ROOT")
+      require("telescope.builtin").tags({ ctags_file = p4_root .. "/tags", fname_width = 80 })
+    end, opts)
     vim.keymap.set("n", "<c-k>", vim.diagnostic.goto_prev)
     vim.keymap.set("n", "<c-j>", vim.diagnostic.goto_next)
     vim.keymap.set("n", "<c-s>", vim.lsp.buf.signature_help)

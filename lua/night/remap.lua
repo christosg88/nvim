@@ -1,11 +1,11 @@
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 vim.keymap.set({"n", "v"}, "<leader>w", vim.cmd.write)
 
-vim.keymap.set({"n", "v"}, "/", "/\\v")
-vim.keymap.set({"n", "v"}, "?", "?\\v")
-vim.keymap.set({"c", "v"}, "s/", "s/\\v")
-vim.keymap.set("n", "*", "/\\v<<c-r><c-w>><cr>")
-vim.keymap.set("n", "#", "?\\v<<c-r><c-w>><cr>")
+--vim.keymap.set({"n", "v"}, "/", "/\\v")
+--vim.keymap.set({"n", "v"}, "?", "?\\v")
+--vim.keymap.set({"c", "v"}, "s/", "s/\\v")
+--vim.keymap.set("n", "*", "/\\v<<c-r><c-w>><cr>")
+--vim.keymap.set("n", "#", "?\\v<<c-r><c-w>><cr>")
 
 vim.keymap.set("n", "N", "Nzz")
 vim.keymap.set("n", "n", "nzz")
