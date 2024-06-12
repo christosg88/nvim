@@ -57,7 +57,7 @@ cmp.setup {
     ["<C-Space>"] = cmp.mapping.complete(),
     ["<CR>"] = cmp.mapping.confirm {
       behavior = cmp.ConfirmBehavior.Replace,
-      select = true,
+      select = false,
     },
     ["<Tab>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
@@ -86,15 +86,6 @@ cmp.setup {
     { name = "luasnip" },
   },
 }
-
--- `/` cmdline setup.
-cmp.setup.cmdline("/", {
-  mapping = cmp.mapping.preset.cmdline(),
-  sources = {
-    { name = "buffer" },
-    { name = "nvim_lsp_document_symbol" }
-  }
-})
 
 -- `:` cmdline setup.
 cmp.setup.cmdline(":", {
