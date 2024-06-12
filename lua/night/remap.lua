@@ -1,4 +1,6 @@
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+-- Open the file explorer
+vim.keymap.set("n", "<leader>e", vim.cmd.Ex)
+-- Write the current buffer to file
 vim.keymap.set({"n", "v"}, "<leader>w", vim.cmd.write)
 
 --vim.keymap.set({"n", "v"}, "/", "/\\v")
@@ -11,7 +13,6 @@ vim.keymap.set("n", "N", "Nzz")
 vim.keymap.set("n", "n", "nzz")
 vim.keymap.set("n", "<c-u>", "<c-u>zz")
 vim.keymap.set("n", "<c-d>", "<c-d>zz")
-vim.keymap.set({"n", "v"}, "J", "J0")
 
 vim.keymap.set("v", "<c-J>", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "<c-K>", ":m '<-2<CR>gv=gv")
